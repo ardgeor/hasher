@@ -2,6 +2,9 @@
 #include <util.h>
 
 
+/**
+ * Print usage of the program
+ */
 void print_usage() {
     printf("Usage:  %s [-i] <input string> \n", prog_name);
     printf("\n");
@@ -9,6 +12,9 @@ void print_usage() {
     printf("    -i  info\n\n");
 }
 
+/**
+ * Show information related to the program
+ */
 void info() {
     printf("\n");
     printf("INFO\n====\n\n");
@@ -28,6 +34,10 @@ void info() {
     printf("\n");
 }
 
+/**
+ * Hash string and print the output
+ * @param data_to_hash is the string to be hashed
+ */
 void do_hash (char* data_to_hash) {
     unsigned char hash[crypto_generichash_BYTES];
     char hashStr[crypto_generichash_BYTES * 2 + 1];
@@ -42,6 +52,10 @@ void do_hash (char* data_to_hash) {
 
 }
 
+
+/**
+ * Main function
+ */
 int main(int argc, char **argv) {
 
     prog_name = strrchr(argv[0], '/') + 1;
