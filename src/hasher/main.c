@@ -1,4 +1,5 @@
 #include "main.h"
+#include <util.h>
 
 
 void print_usage() {
@@ -8,12 +9,37 @@ void print_usage() {
     printf("    -i  info\n\n");
 }
 
-void info() {    
-    printf("Info\n");    
+void info() {
+    printf("\n");
+    printf("INFO\n====\n\n");
+    printf(
+        "This tool is a command-line program which performs a hash \n"
+        "of a string given as a parameter.\n"
+        "The hash relies on the generic hash functionality [1] \n"
+        "provided by the libsodium library [2]."
+        "\n\n"
+        "[1] %s\n"
+        "[2] %s\n\n",
+        LIB_SODIUM_LINK,
+        LIB_SODIUM_GENERIC_HASHING_LINK);
+        
+    printf("\n");
+    print_usage();
+    printf("\n");
 }
 
 void do_hash (char* data_to_hash) {
-    printf("Do hash for %s\n", data_to_hash);    
+    unsigned char hash[crypto_generichash_BYTES];
+    char hashStr[crypto_generichash_BYTES * 2];
+    
+    printf("[*] hashing '%s'\n", data_to_hash);
+    crypto_generichash(hash, sizeof(hash),
+        data_to_hash, strlen(data_to_hash),
+        NULL, 0);
+
+    toHex(hash, crypto_generichash_BYTES, hashStr);
+    printf("'%s'\n", hashStr);
+
 }
 
 int main(int argc, char **argv) {

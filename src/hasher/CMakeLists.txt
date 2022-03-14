@@ -1,5 +1,5 @@
 # Add executable target
-add_executable(hasher main.c)
+add_executable(hasher main.c util.c)
 
 # Set the header files directory
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/)

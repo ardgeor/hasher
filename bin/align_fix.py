@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# Taken from Lzhiyong: https://github.com/Lzhiyong/termux-ndk/blob/master/patches/align_fix.py
+
 import struct
 import sys
 import os
