@@ -4,9 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <sodium.h>
+#include <magic.h>
 #include <assert.h>
-
 
 
 #endif /* TEST_HASH_H */

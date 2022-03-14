@@ -1,5 +1,5 @@
 # Add executable target
-add_executable(hasher main.c util.c)
+add_executable(hasher main.c)
 
 # Set the header files directory
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/)
@@ -20,3 +20,4 @@ set(SODIUM_DISABLE_TESTS ON)
 FetchContent_MakeAvailable(Sodium)
 
 target_link_libraries(hasher PRIVATE sodium)
+target_link_libraries(hasher PRIVATE magic)
