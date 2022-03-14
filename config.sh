@@ -29,4 +29,4 @@ bin_dir="bin"
 # Cross-compilation
 export NDK="/home/test/Android/Sdk/ndk/23.1.7779620"
 export ABI="${ARM64}"
-export MIN_SDK_VERSION="29"
+export MIN_SDK_VERSION="19"
