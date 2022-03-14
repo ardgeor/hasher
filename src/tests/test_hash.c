@@ -1,4 +1,4 @@
-#include "tests.h"
+#include "test_hash.h"
 
 #define MAX_LEN 64
 

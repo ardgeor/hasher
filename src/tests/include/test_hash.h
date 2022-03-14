@@ -1,5 +1,5 @@
-#ifndef TESTS_H
-#define TESTS_H
+#ifndef TEST_HASH_H
+#define TEST_HASH_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,4 +9,4 @@
 
 
 
-#endif /* TESTS_H */
+#endif /* TEST_HASH_H */
