@@ -47,7 +47,7 @@ void do_hash (char* data_to_hash) {
         data_to_hash, strlen(data_to_hash),
         NULL, 0);
 
-    toHex(hash, crypto_generichash_BYTES, hashStr);
+    bufferToHex(hash, crypto_generichash_BYTES, hashStr);
     printf("'%s'\n", hashStr);
 
 }
