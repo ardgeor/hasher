@@ -30,7 +30,7 @@ void info() {
 
 void do_hash (char* data_to_hash) {
     unsigned char hash[crypto_generichash_BYTES];
-    char hashStr[crypto_generichash_BYTES * 2];
+    char hashStr[crypto_generichash_BYTES * 2 + 1];
     
     printf("[*] hashing '%s'\n", data_to_hash);
     crypto_generichash(hash, sizeof(hash),

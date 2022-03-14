@@ -24,3 +24,26 @@ int toHex(uint8_t *inputBuffer, size_t inputBufferLength, char* output) {
 }
 
 
+/**
+ * clear a char array
+ * Note this function is INLINE, this has advantages against RE with respect to use memcpy
+ * @param arr           : target array
+ * @param arrLength     : length of the array
+ */
+void clearCharArray(char* arr, size_t arrLength) {
+    for (int i = 0; i < arrLength; i++) {
+        arr[i] = '\0';
+    }
+}
+
+
+/**
+ *
+ * @param buffer to transform to a hex string
+ * @param bufferLength
+ * @param hex need to have a size of 2 * bufferLength + 1
+ */
+void bufferToHex(uint8_t *buffer, size_t bufferLength, char* hex) {
+    clearCharArray(hex, 2*bufferLength + 1);
+    toHex(buffer, bufferLength, hex);
+}
