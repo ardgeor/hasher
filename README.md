@@ -110,6 +110,10 @@ Total Test time (real) =   0.02 sec
 
 
 
+**Note:** Ensure that the `ENABLE_TESTS` variable is set to `ON` in the `src/CMakeLists.txt` file.
+
+
+
 ## Execution
 
 As mentioned above, after a cross-compilation build,  an executable binary with name `hasher`  is generated in `build_${ABI}/hasher/`, as shown in the example below:
