@@ -1,24 +1,33 @@
 #include "test_hash.h"
 
-#define MAX_LEN 64
+#define MAX_INPUT_LEN 64
 
-
+/** 
+ * Test case structure
+ */
 typedef struct test_params{ 
-    char in_str[MAX_LEN]; 
+    char in_str[MAX_INPUT_LEN]; 
     char out_hash[crypto_generichash_BYTES_MAX * 2 +1];
 } test_params_s; 
 
 
+/** 
+ * Execute test case
+ */
 void test_case(test_params_s t){    
     char hash_str[crypto_generichash_BYTES * 2 + 1];
     do_hash(t.in_str, hash_str);
-    printf( "in_str : %s | expected_hash : %s, | hash : %s\n", t.in_str, t.out_hash, hash_str);
-    printf("cmp: %d\n", strncmp(t.out_hash, hash_str, crypto_generichash_BYTES) == 0);    
+    // printf( "in_str : %s | expected_hash : %s, | hash : %s\n", t.in_str, t.out_hash, hash_str);
+    // printf("cmp: %d\n", strncmp(t.out_hash, hash_str, crypto_generichash_BYTES) == 0);    
     assert(strncmp(t.out_hash, hash_str, crypto_generichash_BYTES) == 0);
-
 }
 
+
+/** 
+ * Main function
+ */
 int main() {     
+    // define tests cases
     test_params_s TESTS[] = {
         {
             .in_str = "hello",
@@ -32,6 +41,7 @@ int main() {
 
     int i; 
 
+    // execute test cases
     for( i=0; i<2; i++ ) { 
         test_case(TESTS[i]);        
     } 
