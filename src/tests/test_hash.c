@@ -16,9 +16,7 @@ typedef struct test_params{
  */
 void test_case(test_params_s t){    
     char hash_str[crypto_generichash_BYTES * 2 + 1];
-    do_hash(t.in_str, hash_str);
-    // printf( "in_str : %s | expected_hash : %s, | hash : %s\n", t.in_str, t.out_hash, hash_str);
-    // printf("cmp: %d\n", strncmp(t.out_hash, hash_str, crypto_generichash_BYTES) == 0);    
+    do_hash(t.in_str, hash_str);    
     assert(strncmp(t.out_hash, hash_str, crypto_generichash_BYTES) == 0);
 }
 
