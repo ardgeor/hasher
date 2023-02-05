@@ -12,7 +12,7 @@ void do_hash (char* data_to_hash, char* hash_str) {
     
     printf("[*] hashing '%s'\n", data_to_hash);
     crypto_generichash(hash, sizeof(hash),
-        data_to_hash, strlen(data_to_hash),
+        (const unsigned char*) data_to_hash, strlen(data_to_hash),
         NULL, 0);
 
     bufferToHex(hash, crypto_generichash_BYTES, hash_str);
