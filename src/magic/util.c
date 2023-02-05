@@ -8,7 +8,7 @@
  * @param output            : string at the output
  * @return
  */
-int toHex(uint8_t *inputBuffer, size_t inputBufferLength, char* output) {
+int to_hex(uint8_t *inputBuffer, size_t inputBufferLength, char* output) {
     char hexDigits[] = {'0', '1', '2', '3',
                         '4', '5', '6', '7',
                         '8', '9', 'a', 'b',
@@ -30,7 +30,7 @@ int toHex(uint8_t *inputBuffer, size_t inputBufferLength, char* output) {
  * @param arr           : target array
  * @param arrLength     : length of the array
  */
-void clearCharArray(char* arr, size_t arrLength) {
+void clear_char_array(char* arr, size_t arrLength) {
     for (int i = 0; i < arrLength; i++) {
         arr[i] = '\0';
     }
@@ -43,7 +43,7 @@ void clearCharArray(char* arr, size_t arrLength) {
  * @param bufferLength
  * @param hex need to have a size of 2 * bufferLength + 1
  */
-void bufferToHex(uint8_t *buffer, size_t bufferLength, char* hex) {
-    clearCharArray(hex, 2*bufferLength + 1);
-    toHex(buffer, bufferLength, hex);
+void buffer_to_hex(uint8_t *buffer, size_t bufferLength, char* hex) {
+    clear_char_array(hex, 2*bufferLength + 1);
+    to_hex(buffer, bufferLength, hex);
 }
