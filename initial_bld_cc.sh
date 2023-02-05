@@ -14,7 +14,7 @@ cmake -S ${source_dir} -B ${build_dir} \
     
 cd ${build_dir}; make; cd ${current_dir}
 
-if [ "${ABI}" = "${ARM64}" ]
+if [[ "${ABI}" = "${ARM64}" || "${ABI}" = "${ARM32}" ]]
 then
     path_to_exec="${build_dir}/hasher/hasher"
     fix_binary ${path_to_exec}

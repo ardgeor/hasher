@@ -7,24 +7,24 @@
  */
 typedef struct test_params{ 
     char in_str[MAX_INPUT_LEN]; 
-    char out_hash[crypto_generichash_BYTES_MAX * 2 +1];
+    char out_hash[crypto_generichash_BYTES_MAX * 2 + 1];
 } test_params_s; 
 
 
 /** 
  * Execute test case
  */
-void test_case(test_params_s t){    
+void test_case(test_params_s t){        
     char hash_str[crypto_generichash_BYTES * 2 + 1];
-    do_hash(t.in_str, hash_str);    
-    assert(strncmp(t.out_hash, hash_str, crypto_generichash_BYTES) == 0);
+    do_hash(t.in_str, hash_str);        
+    assert(strncmp(t.out_hash, hash_str, crypto_generichash_BYTES * 2 + 1) == 0);    
 }
 
 
 /** 
  * Main function
  */
-int main() {     
+int main(void) {     
     // define tests cases
     test_params_s TESTS[] = {
         {
@@ -34,7 +34,7 @@ int main() {
         {
             .in_str = "this is awesome",
             .out_hash = "b7566140f51b935484f010d26a8efaee9a8103312dd41cdbf3910c679d5ede23"
-        }
+        }        
     }; 
 
     int i; 

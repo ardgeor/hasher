@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef MAGIC_H
+#define MAGIC_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,4 +9,4 @@
 
 void do_hash (char* data_to_hash, char* hash_str);
 
-#endif /* MAIN_H */
+#endif /* MAGIC_H */

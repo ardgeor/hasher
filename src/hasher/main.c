@@ -20,7 +20,7 @@ void info() {
     printf(
         "This tool is a command-line program which performs a hash \n"
         "of a string given as a parameter.\n"
-        "The hash relies on the generic hash functionality [1] \n"
+        "The hash computation relies on the generic hash functionality [1] \n"
         "provided by the libsodium library [2]."
         "\n\n"
         "[1] %s\n"
